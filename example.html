@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+	<meta charset="UTF-8">
+	<title>SVG Examples</title>
+</head>
+<body>
+	<div class="container">
+		<h3>文字弹幕效果</h3>
+		<svg width="320px" height="200px" xmlns="http://www.w3.org/2000/svg">
+			<g>
+				<text font-family="microsoft yahei,sans-serif" font-size="16" y="20" x="100%" fill="#898989">
+					这是一条会动的弹幕
+					<animate attributename="x" from="100%" to="-100%" begin="0s" dur="3s" repeatcount="indefinite"></animate>
+				</text>
+				<text font-family="microsoft yahei,sans-serif" font-size="16" y="80" x="100%" fill="#898989">
+					它也可以动的慢一点
+					<animate attributename="x" from="100%" to="-100%" begin="1s" dur="5s" repeatcount="indefinite"></animate>
+				</text>
+				<text font-family="microsoft yahei,sans-serif" font-size="16" y="-20" x="100" fill="#898989">
+					还可以竖着动
+					<animate attributename="y" from="-20" to="100%" begin="3s" dur="3s" repeatcount="indefinite"></animate>
+				</text>
+				<text font-family="sans-serif" font-size="25" y="120" x="100%" fill="#03a9f4">
+					颜色、字体、大小都能变
+					<animate attributename="x" from="100%" to="-100%" begin="5s" dur="3s" repeatcount="indefinite"></animate>
+				</text>
+			</g>
+		</svg>
+		<h3>旋转效果</h3>
+		<svg width="320" height="200" xmlns="http://www.w3.org/2000/svg">
+			<circle cx="160" cy="100" r="90" stroke="#01579b" stroke-width="2" fill="#b2ebf2"/>
+			<g>
+				<rect x="160" y="100" width="10" height="80" style="fill:#1a237e;"/>
+				<animateTransform attributeName="transform" begin="0s" dur="10s" type="rotate" from="0 160 100" to="360 160 100" repeatCount="indefinite"/>
+			</g>
+		</svg>
+		<h3>文字搭配透明度变化</h3>
+		<svg width="320px" height="140px" xmlns="http://www.w3.org/2000/svg">
+			<text x="35%" y="20" fill="#ffebee" font-family="microsoft yahei,sans-serif" font-weight="bold" font-size="14">
+				前方高能反应！
+				<animate attributename="opacity" from="0" to="1" begin="0s" dur="2.4s" repeatcount="indefinite"></animate>
+			</text>
+			<text x="35%" y="40" fill="#ffcdd2" font-family="microsoft yahei,sans-serif" font-weight="bold" font-size="14">
+				前方高能反应！！
+				<animate attributename="opacity" from="0" to="1" begin="0.4s" dur="2.4s" repeatcount="indefinite"></animate>
+			</text>
+			<text x="35%" y="60" fill="#ef9a9a" font-family="microsoft yahei,sans-serif" font-weight="bold" font-size="14">
+				前方高能反应！！！
+				<animate attributename="opacity" from="0" to="1" begin="0.8s" dur="2.4s" repeatcount="indefinite"></animate>
+			</text>
+			<text x="35%" y="80" fill="#e57373" font-family="microsoft yahei,sans-serif" font-weight="bold" font-size="14">
+				前方高能反应！！！！
+				<animate attributename="opacity" from="0" to="1" begin="1.2s" dur="2.4s" repeatcount="indefinite"></animate>
+			</text>
+			<text x="35%" y="100" fill="#ef5350" font-family="microsoft yahei,sans-serif" font-weight="bold" font-size="14">
+				前方高能反应！！！！！
+				<animate attributename="opacity" from="0" to="1" begin="1.6s" dur="2.4s" repeatcount="indefinite"></animate>
+			</text>
+			<text x="35%" y="120" fill="#f44336" font-family="microsoft yahei,sans-serif" font-weight="bold" font-size="14">
+				前方高能反应！！！！！
+				<animate attributename="opacity" from="0" to="1" begin="2.0s" dur="2.4s" repeatcount="indefinite"></animate>
+			</text>
+		</svg>
+		<h3>灵动的分割线</h3>
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="320" height="64" fill="#009688">
+			<path transform="translate(0 0)" d="M0 12 V20 H4 V12z">
+				<animateTransform attributeName="transform" type="translate" values="0 0; 28 0; 0 0; 0 0" dur="1.5s" begin="0" repeatCount="indefinite" keytimes="0;0.3;0.6;1" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" calcMode="spline" />
+			</path>
+			<path opacity="0.5" transform="translate(0 0)" d="M0 12 V20 H4 V12z">
+				<animateTransform attributeName="transform" type="translate" values="0 0; 28 0; 0 0; 0 0" dur="1.5s" begin="0.1s" repeatCount="indefinite" keytimes="0;0.3;0.6;1" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" calcMode="spline" />
+			</path>
+			<path opacity="0.25" transform="translate(0 0)" d="M0 12 V20 H4 V12z">
+				<animateTransform attributeName="transform" type="translate" values="0 0; 28 0; 0 0; 0 0" dur="1.5s" begin="0.2s" repeatCount="indefinite" keytimes="0;0.3;0.6;1" keySplines="0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8;0.2 0.2 0.4 0.8" calcMode="spline" />
+			</path>
+		</svg>
+		<h3>图形搭配动态效果</h3>
+		<svg width="160px" height="160px" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="box-sizing: border-box;">
+			<path d="M12 21.35l-1.45-1.32c-5.15-4.67-8.55-7.75-8.55-11.53 0-3.08 2.42-5.5 5.5-5.5 1.74 0 3.41.81 4.5 2.09 1.09-1.28 2.76-2.09 4.5-2.09 3.08 0 5.5 2.42 5.5 5.5 0 3.78-3.4 6.86-8.55 11.54l-1.45 1.31z" style="fill: rgb(206, 30, 0); box-sizing: border-box;">
+				<animate attributetype="CSS" attributename="opacity" from="0" to="1" dur="2s" repeatcount="indefinite" style="box-sizing: border-box;"></animate>
+			</path>
+		</svg>
+		<svg width="160px" height="160px" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="box-sizing: border-box;">
+			<path d="M12 21.35l-1.45-1.32c-5.15-4.67-8.55-7.75-8.55-11.53 0-3.08 2.42-5.5 5.5-5.5 1.74 0 3.41.81 4.5 2.09 1.09-1.28 2.76-2.09 4.5-2.09 3.08 0 5.5 2.42 5.5 5.5 0 3.78-3.4 6.86-8.55 11.54l-1.45 1.31z" style="fill: #009688; box-sizing: border-box;">
+				<animate attributetype="CSS" attributename="opacity" from="0" to="1" dur="4s" repeatcount="indefinite" style="box-sizing: border-box;"></animate>
+			</path>
+		</svg>
+		<h3>图形沿路径飞行</h3>
+		<div id="map" style="position: relative;width: 320px;height: 320px">
+			<section style="position: relative;width: 320px;height: 320px">
+				<img src="images/map.jpg" style="position: absolute;">
+				<svg width="320px" height="240px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" style="position: absolute;">
+						<path fill="none" stroke="#009688" style="stroke-width: 3px; stroke-dasharray: 5px, 3px;" d="M431.484,316.158C513.005,316.146,594.525,124.644,702.011,125.322"></path>
+						<g style="transform: rotate(90deg);">
+							<path id="plane" fill="#231F20" d="M-2.282-6.074l0.001,3.926l-3.318,2.101C-5.7-0.66-6.141-1.885-6.775-1.891
+							c-0.734,0.003-1.203,1.596-1.208,2.062l0.001,1.29l-2.328,1.474v2.858l2.327-0.827v0.116h2.406l0.001-0.972l3.299-1.172l0.593,4.73
+							l-2.83,2.773v1.611l3.217-1.877h2.588l3.214,1.877v-1.611l-3.007-2.95l0.776-4.552L5.58,4.107V5.08l2.401-0.006V4.959l2.327,0.825
+							V2.926L7.982,1.452L7.981,0.169c0-0.461-0.472-2.058-1.208-2.062c-0.629-0.01-1.08,1.227-1.182,1.838L2.277-2.162V-6.08
+							c-0.006-1.333-0.89-5.986-2.286-5.972C-1.388-12.056-2.282-7.413-2.282-6.074z" stroke="#ffffff" style="stroke-width: 2px;"></path>
+							<path id="pathSil7ljaenf" fill="#231F20" d="M-2.282-6.074l0.001,3.926l-3.318,2.101C-5.7-0.66-6.141-1.885-6.775-1.891
+							c-0.734,0.003-1.203,1.596-1.208,2.062l0.001,1.29l-2.328,1.474v2.858l2.327-0.827v0.116h2.406l0.001-0.972l3.299-1.172l0.593,4.73
+							l-2.83,2.773v1.611l3.217-1.877h2.588l3.214,1.877v-1.611l-3.007-2.95l0.776-4.552L5.58,4.107V5.08l2.401-0.006V4.959l2.327,0.825
+							V2.926L7.982,1.452L7.981,0.169c0-0.461-0.472-2.058-1.208-2.062c-0.629-0.01-1.08,1.227-1.182,1.838L2.277-2.162V-6.08
+							c-0.006-1.333-0.89-5.986-2.286-5.972C-1.388-12.056-2.282-7.413-2.282-6.074z"></path>
+							<animateMotion path="M431.484,316.158C513.005,316.146,594.525,124.644,702.011,125.322" begin="0s" dur="3s" rotate="auto" repeatCount="indefinite"/>
+						</g>
+				</svg>
+			</section>
+		</div>
+		<h3>带背景的弹幕</h3>
+		<div id="casting" style="position: relative;width: 419px;height: 320px">
+			<section style="position: relative;width: 419px;height: 320px;display: inline-block;">
+				<img style="position: absolute;" src="images/curry.gif"/>
+				<svg style="position: absolute;" width="419px" height="226px" xmlns="http://www.w3.org/2000/svg" style="margin-top: -160px;">
+				    <text font-family="microsoft yahei,sans-serif" font-size="14" y="20" x="100%" fill="#69f0ae" font-weight="bold">
+				        这球也能进？？
+				        <animate attributename="x" from="500" to="-400" begin="0s" dur="5.5s" repeatcount="indefinite"></animate>
+				    </text>
+				    <text font-family="microsoft yahei,sans-serif" font-size="14" y="34" x="100%" fill="#ff6f00" font-weight="bold">
+				        库里！！
+				        <animate attributename="x" from="500" to="-400" begin="0s" dur="5.5s" repeatcount="indefinite"></animate>
+				    </text>
+				    <text font-family="microsoft yahei,sans-serif" font-size="18" y="99" x="100%" fill="#ffcdd2" font-weight="bold">
+				        进啦！！！
+				        <animate attributename="x" from="800" to="-400" begin="1.0s" dur="5.5s" repeatcount="indefinite"></animate>
+				    </text>
+				    <text font-family="microsoft yahei,sans-serif" font-size="18" y="149" x="100%" fill="#e57373" font-weight="bold">
+				        进啦！！！
+				        <animate attributename="x" from="800" to="-400" begin="1.2s" dur="5.5s" repeatcount="indefinite"></animate>
+				    </text>
+				    <text font-family="microsoft yahei,sans-serif" font-size="18" y="199" x="100%" fill="#c62828" font-weight="bold">
+				        进啦！！！
+				        <animate attributename="x" from="800" to="-400" begin="1.4s" dur="5.5s" repeatcount="indefinite"></animate>
+				    </text>
+				    <text font-family="microsoft yahei,sans-serif" font-size="20" y="28" x="100%" fill="#64b5f6" font-weight="bold">
+				        哈哈哈，绝杀了
+				        <animate attributename="x" from="800" to="-400" begin="0.8s" dur="5.5s" repeatcount="indefinite"></animate>
+				    </text>
+				    <text font-family="microsoft yahei,sans-serif" font-size="26" y="128" x="100%" fill="#ffea00" font-weight="bold">
+				        NB！！！
+				        <animate attributename="x" from="800" to="-400" begin="2.0s" dur="5.5s" repeatcount="indefinite"></animate>
+				    </text>
+				</svg>
+			</section>
+		</div>
+	</div>
+</body>
+</html>
