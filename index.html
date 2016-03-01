@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+	<meta charset="UTF-8">
+	<title>SVG Maker | SVG在线编辑器</title>
+	<link href="http://cdn.bootcss.com/pure/0.6.0/pure-min.css" rel="stylesheet"></head>
+	<link rel="stylesheet" href="css/prettify.css">
+	<style>
+					html,body{
+						width:100%;
+						height:100%;
+					}
+					svg{
+						border:2px solid #000;
+					}
+					.panel[data-role="barrage"] svg{
+						border:0;
+					}
+					img{
+						display:block;
+					}
+					.pure-g [class *="pure-u"]{
+						font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif !important;
+					}
+					.pure-menu-heading{
+						font-weight:bold;
+						font-size:20px;
+					}
+					.button-error {
+					background: rgb(202, 60, 60);
+					}
+					#container{
+						width:100%;
+						height:100%;
+					}
+					#menu{
+						height:100%;
+						background:#e3f2fd;
+					}
+					#form{
+						box-shadow: -2px 0 0px #000 inset,2px 0 0px #000 inset;
+						overflow:auto;
+					}
+					#form .panel{
+						display:none;
+					}
+					#form .title,#result .title{
+						padding-left:1em;
+						color:#0d47a1;
+					}
+					.showroom{
+						text-align:center;
+					}
+					.editroom{
+						padding:0 1em;
+					}
+					.editroom .item{
+						border-bottom:5px double #757575;
+						margin-bottom:2em;
+					}
+					pre.prettyprint{
+						box-sizing:border-box;
+						padding:0;
+					}
+		</style>
+<body>
+	<div id="container" class="pure-g">
+		<!--menu & example-->
+		<div class="pure-u-1-5" id="menu">
+			<div class="pure-menu custom-restricted-width">
+				<span class="pure-menu-heading">泛娱SVG在线编辑器</span>
+				<ul class="pure-menu-list">
+					<li class="pure-menu-item">
+						<a href="#" class="pure-menu-link" data-role="text-barrage">纯文字弹幕</a>
+					</li>
+					<li class="pure-menu-item">
+						<a href="#" class="pure-menu-link" data-role="barrage">带背景图的文字弹幕</a>
+					</li>
+					<li class="pure-menu-item">
+						<a href="#" class="pure-menu-link" data-role="pattern">图案</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--form-->
+		<div class="pure-u-2-5" id="form">
+			<h4 class="title">效果展示：</h4>
+			<div class="panel" data-role="text-barrage">
+				<div class="showroom">
+<svg width="320px" height="200px" xmlns="http://www.w3.org/2000/svg" id="test">
+	<g>
+		<text font-family="microsoft yahei,sans-serif" font-size="16" y="20" x="100%" fill="#898989">
+			这是一条会动的弹幕
+			<animate attributename="x" from="100%" to="-100%" begin="0s" dur="3s" repeatcount="indefinite"></animate>
+		</text>
+		<text font-family="microsoft yahei,sans-serif" font-size="16" y="80" x="100%" fill="#898989">
+			它也可以动的慢一点
+			<animate attributename="x" from="100%" to="-100%" begin="1s" dur="5s" repeatcount="indefinite"></animate>
+		</text>
+		<text font-family="microsoft yahei,sans-serif" font-size="16" y="-20" x="100" fill="#898989">
+			还可以竖着动
+			<animate attributename="y" from="-20" to="100%" begin="3s" dur="3s" repeatcount="indefinite"></animate>
+		</text>
+		<text font-family="sans-serif" font-size="25" y="120" x="100%" fill="#03a9f4">
+			颜色、字体、大小都能变
+			<animate attributename="x" from="100%" to="-100%" begin="5s" dur="3s" repeatcount="indefinite"></animate>
+		</text>
+	</g>
+</svg>
+				</div>
+				<h4 class="title">自定义选项：</h4>
+				<div class="editroom">
+					<form class="pure-form pure-form-aligned">
+						<fieldset>
+							<div class="pure-control-group" data-role="svg-width">
+								<label>SVG宽度</label>
+								<input type="text" placeholder="单位为px，默认为320px"></div>
+							<div class="pure-control-group" data-role="svg-height">
+								<label>SVG高度</label>
+								<input type="text" placeholder="单位为px，默认为200px"></div>
+						</fieldset>
+						<fieldset class="item">
+							<div class="pure-control-group">
+								<label>弹幕文字</label>
+								<input type="text"></div>
+							<div class="pure-control-group">
+								<label>字体大小</label>
+								<input type="text" placeholder="单位为px，默认为16px"></div>
+							<div class="pure-control-group">
+								<label>字体颜色</label>
+								<input type="text" placeholder="请输入rgb值或hex值"></div>
+							<div class="pure-controls">
+								<label class="pure-checkbox">
+									<input type="checkbox">纵向弹幕（默认为横向）</label>
+							</div>
+							<button class="button-error pure-button pure-button-primary remove">撤销</button>
+						</fieldset>
+					</form>
+					<button class="pure-button pure-button-primary add">添加一条弹幕</button>
+					<button class="pure-button pure-button-primary generate">生成</button>
+				</div>
+			</div>
+			<div class="panel" data-role="barrage" style="display: block">
+				<div class="showroom">
+<section style="width: 419px;height: 236px;display: inline-block;">
+	<img src="images/curry.gif"/>
+	<svg width="419px" height="250px" xmlns="http://www.w3.org/2000/svg" style="margin-top: -236px;">
+		<text font-family="microsoft yahei,sans-serif" font-size="14" y="20" x="100%" fill="#69f0ae" font-weight="bold">
+			这球也能进？？
+			<animate attributename="x" from="500" to="-400" begin="0s" dur="5.5s" repeatcount="indefinite"></animate>
+		</text>
+		<text font-family="microsoft yahei,sans-serif" font-size="14" y="34" x="100%" fill="#ff6f00" font-weight="bold">
+			库里！！
+			<animate attributename="x" from="500" to="-400" begin="0s" dur="5.5s" repeatcount="indefinite"></animate>
+		</text>
+		<text font-family="microsoft yahei,sans-serif" font-size="18" y="99" x="100%" fill="#ffcdd2" font-weight="bold">
+			进啦！！！
+			<animate attributename="x" from="800" to="-400" begin="1.0s" dur="5.5s" repeatcount="indefinite"></animate>
+		</text>
+		<text font-family="microsoft yahei,sans-serif" font-size="18" y="149" x="100%" fill="#e57373" font-weight="bold">
+			进啦！！！
+			<animate attributename="x" from="800" to="-400" begin="1.2s" dur="5.5s" repeatcount="indefinite"></animate>
+		</text>
+		<text font-family="microsoft yahei,sans-serif" font-size="18" y="199" x="100%" fill="#c62828" font-weight="bold">
+			进啦！！！
+			<animate attributename="x" from="800" to="-400" begin="1.4s" dur="5.5s" repeatcount="indefinite"></animate>
+		</text>
+		<text font-family="microsoft yahei,sans-serif" font-size="20" y="28" x="100%" fill="#64b5f6" font-weight="bold">
+			哈哈哈，绝杀了
+			<animate attributename="x" from="800" to="-400" begin="0.8s" dur="5.5s" repeatcount="indefinite"></animate>
+		</text>
+		<text font-family="microsoft yahei,sans-serif" font-size="26" y="128" x="100%" fill="#ffea00" font-weight="bold">
+			NB！！！
+			<animate attributename="x" from="800" to="-400" begin="2.0s" dur="5.5s" repeatcount="indefinite"></animate>
+		</text>
+	</svg>
+</section>
+				</div>
+				<h4 class="title">自定义选项：</h4>
+				<div class="editroom">
+					<form class="pure-form pure-form-aligned">
+						<fieldset>
+							<div class="pure-control-group" data-role="svg-width">
+								<label>SVG宽度</label>
+								<input type="text" placeholder="建议填写图片宽度"></div>
+							<div class="pure-control-group" data-role="svg-height">
+								<label>SVG高度</label>
+								<input type="text" placeholder="建议填写图片高度"></div>
+							<div class="pure-control-group" data-role="svg-bg">
+								<label>图片地址</label>
+								<input type="text" placeholder="请填写图片网络链接"></div>
+						</fieldset>
+						<fieldset class="item">
+							<div class="pure-control-group">
+								<label>弹幕文字</label>
+								<input type="text"></div>
+							<div class="pure-control-group">
+								<label>字体大小</label>
+								<input type="text" placeholder="单位为px，默认为16px"></div>
+							<div class="pure-control-group">
+								<label>字体颜色</label>
+								<input type="text" placeholder="请输入rgb值或hex值"></div>
+							<div class="pure-controls">
+								<label class="pure-checkbox">
+									<input type="checkbox">纵向弹幕（默认为横向）</label>
+							</div>
+							<button class="button-error pure-button pure-button-primary remove">撤销</button>
+						</fieldset>
+					</form>
+					<button class="pure-button pure-button-primary add">添加一条弹幕</button>
+					<button class="pure-button pure-button-primary generate">生成</button>
+				</div>
+			</div>
+		</div>
+		<!--svg code-->
+		<div class="pure-u-2-5" id="result">
+			<h4 class="title">对应代码：</h4>
+			<pre class="coderoom prettyprint" style="width: 100%;height: 100%">
+			</pre>
+		</div>
+	</div>
+	<script src="http://cdn.bootcss.com/snap.svg/0.4.1/snap.svg-min.js"></script>
+	<script src="http://cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+	<script src="js/prettify.js"></script>
+	<!-- <script src="js/beautify-html.js"></script> -->
+	<script src="js/main.js"></script>
+</body>
+</html>
